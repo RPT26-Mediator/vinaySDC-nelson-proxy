@@ -5,19 +5,10 @@ const port = 3000;
 
 app.use('/:listingID', express.static(__dirname + '/../public'));
 
-app.get('/photos/:propertyId', (req, res) => {
+app.get('/photos/:propertyID', (req, res) => {
   axios.get(`http://localhost:3002/photos/${req.params.propertyID}/`)
     .then((photos) => {
       res.send(photos.data);
-    }).catch((err) => {
-      res.send(err);
-    });
-});
-
-app.get('/photos/:propertyID/primaryPhoto', (req, res) => {
-  axios.get(`http://localhost:3002/photos/${req.params.propertyID}/primaryPhoto`)
-    .then((primaryPhotos) => {
-      res.send(primaryPhotos.data);
     }).catch((err) => {
       res.send(err);
     });
