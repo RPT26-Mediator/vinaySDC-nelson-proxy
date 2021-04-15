@@ -7,7 +7,7 @@ app.use('/:listingID', express.static(__dirname + '/../public'));
 
 app.get('/photos/:propertyID', (req, res) => {
   // axios.get(`http://localhost:3002/photos/${req.params.propertyID}/`)
-  axios.get(`http://52.53.176.39:3002/photos/${req.params.propertyID}/`):wq
+  axios.get(`http://52.53.176.39:3002/photos/${req.params.propertyID}/`)
     .then((photos) => {
       res.send(photos.data);
     }).catch((err) => {
