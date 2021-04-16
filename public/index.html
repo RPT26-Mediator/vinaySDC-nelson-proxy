@@ -6,9 +6,9 @@
     <title>Airbnb Listing</title>
     <style>
       header {
-        max-width: 1280px;
+        /* max-width: 1280px;
         margin-left: 10%;
-        margin-right: 10%;
+        margin-right: 10%; */
         margin-top: 10px;
         margin-bottom: 30px;
         display: flex;
@@ -20,6 +20,7 @@
       }
 
       logo {
+        margin-left: 10%;
         width: "102px";
         height: "32px";
         fill: #FF385C;
@@ -28,7 +29,8 @@
 
       /* search bar is a button */
       searchBar {
-        margin: 0px auto;
+        margin-left: 5%;
+        margin-right: 10%;
         text-align: left;
         vertical-align: middle;
         background-color: rgb(255, 255, 255);
@@ -43,15 +45,20 @@
         outline: 0;
       }
 
+      searchBar:hover {
+        box-shadow: 0px 2px 4px #DCDCDC;
+      }
+
       /* text inside of the searchbar */
       buttonText {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 18px;
         min-width: 0px;
         font-weight: 600;
         padding: 16px;
         text-overflow: ellipsis;
         white-space: nowrap;
+        font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
       }
 
       /* magnifying glass icon */
@@ -73,36 +80,31 @@
 
       becomeHostButton {
         border-radius: 22px;
-        bottom: 0px;
-        content: "";
-        left: -3px;
         position: absolute;
-        right: -3px;
-        top: 0px;
+        top: 3px;
         z-index: 0;
         appearance: none;
         background: transparent;
         border: 0px;
         cursor: pointer;
         display: inline-block;
-        font-family: inherit;
-        font-size: 16px;
+        font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+        font-size: 15px;
         font-weight: 600;
         line-height: 18px;
         margin: 0px;
         outline: none;
         overflow: visible;
         padding: 16px;
-        text-align: inherit;
-        text-decoration: none;
-        -webkit-user-select: auto;
-        -moz-user-select: auto;
-        -ms-user-select: auto;
-        user-select: auto;
         position: relative;
         white-space: nowrap;
         z-index: 1;
         color: #222222;
+      }
+
+      becomeHostButton:hover {
+        background-color: #F5F5F5;
+        height: 15px;
       }
 
       languageIcon {
@@ -110,6 +112,12 @@
         height: 16px;
         width: 16px;
         padding: 16px;
+        margin-top: 4px;
+      }
+
+      languageIcon:hover {
+        background-color: #F5F5F5	;
+        border-radius: 25px;
       }
 
       loginIcon {
