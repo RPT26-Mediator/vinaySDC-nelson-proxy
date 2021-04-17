@@ -17,7 +17,7 @@ app.get('/photos/:propertyID', (req, res) => {
 
 app.get('/details/:propertyId', (req, res) => {
   // axios.get(`http://localhost:3003/details/${req.params.propertyId}/`)
-  axios.get(`http://3.142.136.159/details/${req.params.propertyId}/`)
+  axios.get(`http://3.142.136.159/details/${req.params.propertyId}`)
     .then((details) => {
       res.send(details.data);
     }).catch((err) => {
