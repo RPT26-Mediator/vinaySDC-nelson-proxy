@@ -5,6 +5,7 @@ const port = 3000;
 const cors = require('cors');
 
 app.use(cors());
+const path = require('path');
 const newrelic = require('newrelic');
 
 var bodyParser = require('body-parser');
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 
 
 
-app.use('/:listingID', express.static(__dirname + '/../public'));
+app.use(express.static(__dirname + '/../public'));
 
 // app.get('/photos/:propertyID', (req, res) => {
 //   // axios.get(`http://localhost:3002/photos/${req.params.propertyID}/`)
@@ -84,6 +85,10 @@ app.post('/addHosts', (req, res) => {
     }).catch((error) => {
       res.status(400).send(error);
     });
+});
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
 app.listen(port, () => {
