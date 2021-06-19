@@ -77,6 +77,18 @@ app.get('/host/:id', (req, res) => {
     });
 });
 
+//load
+
+app.get('/loadHost/:id', (req, res) => {
+  axios.get(`http://172.31.22.170/hosts/${req.params.id}`)
+  // axios.get(`http://localhost:3007/${req.params.listingID}/host`)
+    .then((host) => {
+      res.send(host.data);
+    }).catch((error) => {
+      res.status(400).send(error);
+    });
+});
+
 app.post('/addHosts', (req, res) => {
 
   axios.post('http://3.129.55.10:3007/addHosts', {data: req.body})
